@@ -35,6 +35,9 @@ public:
     std::span<const AVProfile> getProfiles() const noexcept;
     std::span<const AVChannelLayout> getChannelLayouts() const noexcept;
 
+    bool isDecoder() const noexcept;
+    bool isEncoder() const noexcept;
+
 private:
     const AVCodec* m_codec;
 };

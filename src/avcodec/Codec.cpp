@@ -96,4 +96,12 @@ std::span<const AVChannelLayout> Codec::getChannelLayouts() const noexcept {
     });
 }
 
+bool Codec::isDecoder() const noexcept {
+    return av_codec_is_decoder(m_codec) != 0;
+}
+
+bool Codec::isEncoder() const noexcept {
+    return av_codec_is_encoder(m_codec) != 0;
+}
+
 }// namespace ffmpeg
